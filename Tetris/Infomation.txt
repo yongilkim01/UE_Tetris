@@ -1,0 +1,5 @@
+WASD 이동
+Space 블럭 두기
+Q 회전
+ESC 게임종료
+콘텐츠폴더->MapSize가서 MapSize변경
