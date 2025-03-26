@@ -4,3 +4,4 @@
 #include "Global/TetrisConst.h"
 
 int32 UTetrisConst::BlockCount = 4;
+int32 UTetrisConst::BlockSize = 50;

@@ -4,9 +4,15 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Pawn.h"
+
+#include "Global/TetrisConst.h"
+#include "Global/TetrisStruct.h"
+
 #include "Board.generated.h"
 
-class UBoardDetaAsset;
+class UMyDataAsset;
+class ABlockPiece;
+class ABlock;
 
 UCLASS()
 class TETRIS_API ABoard : public APawn
@@ -14,18 +20,32 @@ class TETRIS_API ABoard : public APawn
 	GENERATED_BODY()
 
 public:
-	// Sets default values for this actor's properties
 	ABoard();
 
 protected:
-	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
 public:
-	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	UBoardDetaAsset* MapSize;
+private:
+	void CreateBoardEdge(int Width, int Height);
+	void SpawnBlockPiece(const FVector& Location);
+
+public:
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Tetris|Board")
+	UMyDataAsset* BoardSize = nullptr;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Tetris|Board")
+	TSubclassOf<ABlockPiece> BlockPieceClass;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Tetris|Spawn")
+	TSubclassOf<ABlock> BlockClass;
+
+public:
+	float BoardWidth = 0.0f;
+	float BoardHeight = 0.0f;
+
+	TArray<TArray<int>> TetrisMap;
 
 };

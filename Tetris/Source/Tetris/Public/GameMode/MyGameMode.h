@@ -6,6 +6,8 @@
 #include "GameFramework/GameMode.h"
 #include "MyGameMode.generated.h"
 
+class AGameMap;
+
 /**
  * 
  */
@@ -13,5 +15,8 @@ UCLASS()
 class TETRIS_API AMyGameMode : public AGameMode
 {
 	GENERATED_BODY()
+
+public:
+	AGameMap* GameMap = nullptr;
 	
 };

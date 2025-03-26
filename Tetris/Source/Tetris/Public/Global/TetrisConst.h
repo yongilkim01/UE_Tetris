@@ -16,5 +16,6 @@ class TETRIS_API UTetrisConst : public UObject
 
 public:
 	static int32 BlockCount;
+	static int32 BlockSize;
 	
 };
