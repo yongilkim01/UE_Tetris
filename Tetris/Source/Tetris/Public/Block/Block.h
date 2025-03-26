@@ -3,27 +3,24 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "GameFramework/Pawn.h"
-#include "GameMap.generated.h"
-
-class UMyDataAsset;
+#include "GameFramework/Actor.h"
+#include "Block.generated.h"
 
 UCLASS()
-class TETRIS_API AGameMap : public APawn
+class TETRIS_API ABlock : public AActor
 {
 	GENERATED_BODY()
-
-public:
+	
+public:	
 	// Sets default values for this actor's properties
-	AGameMap();
+	ABlock();
 
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
-public:
+
+public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	UMyDataAsset* MapSize;
 };

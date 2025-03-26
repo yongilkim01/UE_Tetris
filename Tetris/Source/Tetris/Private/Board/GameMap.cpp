@@ -3,6 +3,11 @@
 
 #include "Board/GameMap.h"
 
+#include "Data/MyDataAsset.h"
+
+#include "GameFramework/SpringArmComponent.h"
+#include "Camera/CameraComponent.h"
+
 // Sets default values
 AGameMap::AGameMap()
 {
@@ -15,6 +20,11 @@ AGameMap::AGameMap()
 void AGameMap::BeginPlay()
 {
 	Super::BeginPlay();
+
+	if (MapSize != nullptr)
+	{
+		SetActorRelativeScale3D(FVector(MapSize->Width, MapSize->Height, 1));
+	}
 	
 }
 
@@ -24,11 +34,3 @@ void AGameMap::Tick(float DeltaTime)
 	Super::Tick(DeltaTime);
 
 }
-
-// Called to bind functionality to input
-void AGameMap::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
-{
-	Super::SetupPlayerInputComponent(PlayerInputComponent);
-
-}
-

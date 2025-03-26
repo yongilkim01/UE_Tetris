@@ -6,6 +6,8 @@
 #include "Camera/CameraActor.h"
 #include "MainCameraActor.generated.h"
 
+class UMyDataAsset;
+
 /**
  * 
  */
@@ -17,4 +19,6 @@ class TETRIS_API AMainCameraActor : public ACameraActor
 protected:
 	virtual void BeginPlay() override;
 	
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	UMyDataAsset* MapSize;
 };
