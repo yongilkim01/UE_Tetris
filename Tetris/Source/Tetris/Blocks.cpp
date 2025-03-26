@@ -200,6 +200,11 @@ void ABlocks::GetBlockOffset(const FName& BlockTypeName)
 			BlockArray[2]->SetActorRelativeLocation(BlockOffsets->Offset3);
 			BlockArray[3]->SetActorRelativeLocation(BlockOffsets->Offset4);
 		}
+
+		for (int i = 0; i < 4; i++)
+		{
+			BlockArray[i]->SetBlockColor(BlockOffsets->Color);
+		}
 	}
 }
 

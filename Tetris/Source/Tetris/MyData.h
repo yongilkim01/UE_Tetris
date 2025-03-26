@@ -35,6 +35,9 @@ struct FBlockOffSet :public FTableRowBase
     FVector Offset3;
     UPROPERTY(EditAnywhere, BlueprintReadWrite)
     FVector Offset4;
+    UPROPERTY(EditAnywhere, BlueprintReadWrite)
+    FLinearColor Color;            // 블록의 색상
+
 };
 
 

@@ -23,6 +23,9 @@ public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
-	
+	void SetBlockColor(FLinearColor Color);
+
+private:
+	UMaterialInterface* BlockMaterial = nullptr;
 
 };
